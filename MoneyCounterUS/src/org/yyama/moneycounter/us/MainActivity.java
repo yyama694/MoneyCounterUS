@@ -27,6 +27,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.view.Window;
 import android.view.inputmethod.EditorInfo;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
@@ -44,64 +45,94 @@ import com.google.android.gms.ads.InterstitialAd;
 /*
  * 
  */
-public class MainActivity extends ActionBarActivity implements OnClickListener {
+public class MainActivity extends Activity implements OnClickListener {
 
-	int[] kind = { 1, 5, 10, 50, 100, 500, 1000, 2000, 5000, 10000 };
-	Map<Integer, Data> data = new HashMap<Integer, Data>();
+	int[] centValue = { 1, 5, 10, 25, 50, 99999, 100, 200, 500, 1000, 2000,
+			5000, 10000 };
+	Map<Integer, Integer> data = new HashMap<Integer, Integer>();
 	CountDialog cDialog = new CountDialog();
 	Map<Integer, Integer> idMapNum = new HashMap<Integer, Integer>();
 	Map<Integer, Integer> idMapSum = new HashMap<Integer, Integer>();
+	Map<Integer, Integer> idMapTxt = new HashMap<Integer, Integer>();
 	CountDialog countDialog;
-	int[] numIds = { R.id.Num1, R.id.Num5, R.id.Num10, R.id.Num50, R.id.Num100,
-			R.id.Num500, R.id.Num1000, R.id.Num2000, R.id.Num5000,
-			R.id.Num10000 };
-	int[] sumIds = { R.id.Sum1, R.id.Sum5, R.id.Sum10, R.id.Sum50, R.id.Sum100,
-			R.id.Sum500, R.id.Sum1000, R.id.Sum2000, R.id.Sum5000,
-			R.id.Sum10000 };
+	int[] numIds = { R.id.Num1cent, R.id.Num5cent, R.id.Num10cent,
+			R.id.Num25cent, R.id.Num50cent, R.id.Num100cent, R.id.Num1dol,
+			R.id.Num2dol, R.id.Num5dol, R.id.Num10dol, R.id.Num20dol,
+			R.id.Num50dol, R.id.Num100dol };
+	int[] sumIds = { R.id.Sum1cent, R.id.Sum5cent, R.id.Sum10cent,
+			R.id.Sum25cent, R.id.Sum50cent, R.id.Sum100cent, R.id.Sum1dol,
+			R.id.Sum2dol, R.id.Sum5dol, R.id.Sum10dol, R.id.Sum20dol,
+			R.id.Sum50dol, R.id.Sum100dol };
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+		requestWindowFeature(Window.FEATURE_NO_TITLE);
 		setContentView(R.layout.activity_main);
-		// Log.d("fukuchi", "onCreate");
-		for (int i : kind) {
-			data.put(i, new Data(0, 0));
+		for (int i : centValue) {
+			data.put(i, 0);
 		}
 
 		((Button) findViewById(R.id.btnClear)).setOnClickListener(this);
 
-		((TextView) findViewById(R.id.Text10000)).setOnClickListener(this);
-		((TextView) findViewById(R.id.Text5000)).setOnClickListener(this);
-		((TextView) findViewById(R.id.Text2000)).setOnClickListener(this);
-		((TextView) findViewById(R.id.Text1000)).setOnClickListener(this);
-		((TextView) findViewById(R.id.Text500)).setOnClickListener(this);
-		((TextView) findViewById(R.id.Text100)).setOnClickListener(this);
-		((TextView) findViewById(R.id.Text50)).setOnClickListener(this);
-		((TextView) findViewById(R.id.Text10)).setOnClickListener(this);
-		((TextView) findViewById(R.id.Text5)).setOnClickListener(this);
-		((TextView) findViewById(R.id.Text1)).setOnClickListener(this);
+		((TextView) findViewById(R.id.Text100dol)).setOnClickListener(this);
+		((TextView) findViewById(R.id.Text50dol)).setOnClickListener(this);
+		((TextView) findViewById(R.id.Text20dol)).setOnClickListener(this);
+		((TextView) findViewById(R.id.Text10dol)).setOnClickListener(this);
+		((TextView) findViewById(R.id.Text5dol)).setOnClickListener(this);
+		((TextView) findViewById(R.id.Text2dol)).setOnClickListener(this);
+		((TextView) findViewById(R.id.Text1dol)).setOnClickListener(this);
 
-		idMapNum.put(R.id.Text1, R.id.Num1);
-		idMapNum.put(R.id.Text5, R.id.Num5);
-		idMapNum.put(R.id.Text10, R.id.Num10);
-		idMapNum.put(R.id.Text50, R.id.Num50);
-		idMapNum.put(R.id.Text100, R.id.Num100);
-		idMapNum.put(R.id.Text500, R.id.Num500);
-		idMapNum.put(R.id.Text1000, R.id.Num1000);
-		idMapNum.put(R.id.Text2000, R.id.Num2000);
-		idMapNum.put(R.id.Text5000, R.id.Num5000);
-		idMapNum.put(R.id.Text10000, R.id.Num10000);
+		((TextView) findViewById(R.id.Text100cent)).setOnClickListener(this);
+		((TextView) findViewById(R.id.Text50cent)).setOnClickListener(this);
+		((TextView) findViewById(R.id.Text25cent)).setOnClickListener(this);
+		((TextView) findViewById(R.id.Text10cent)).setOnClickListener(this);
+		((TextView) findViewById(R.id.Text5cent)).setOnClickListener(this);
+		((TextView) findViewById(R.id.Text1cent)).setOnClickListener(this);
 
-		idMapSum.put(R.id.Text1, R.id.Sum1);
-		idMapSum.put(R.id.Text5, R.id.Sum5);
-		idMapSum.put(R.id.Text10, R.id.Sum10);
-		idMapSum.put(R.id.Text50, R.id.Sum50);
-		idMapSum.put(R.id.Text100, R.id.Sum100);
-		idMapSum.put(R.id.Text500, R.id.Sum500);
-		idMapSum.put(R.id.Text1000, R.id.Sum1000);
-		idMapSum.put(R.id.Text2000, R.id.Sum2000);
-		idMapSum.put(R.id.Text5000, R.id.Sum5000);
-		idMapSum.put(R.id.Text10000, R.id.Sum10000);
+		idMapNum.put(R.id.Text1cent, R.id.Num1cent);
+		idMapNum.put(R.id.Text5cent, R.id.Num5cent);
+		idMapNum.put(R.id.Text10cent, R.id.Num10cent);
+		idMapNum.put(R.id.Text25cent, R.id.Num25cent);
+		idMapNum.put(R.id.Text50cent, R.id.Num50cent);
+		idMapNum.put(R.id.Text100cent, R.id.Num100cent);
+		idMapNum.put(R.id.Text1dol, R.id.Num1dol);
+		idMapNum.put(R.id.Text2dol, R.id.Num2dol);
+		idMapNum.put(R.id.Text5dol, R.id.Num5dol);
+		idMapNum.put(R.id.Text10dol, R.id.Num10dol);
+		idMapNum.put(R.id.Text20dol, R.id.Num20dol);
+		idMapNum.put(R.id.Text50dol, R.id.Num50dol);
+		idMapNum.put(R.id.Text100dol, R.id.Num100dol);
+
+		idMapSum.put(R.id.Text1cent, R.id.Sum1cent);
+		idMapSum.put(R.id.Text5cent, R.id.Sum5cent);
+		idMapSum.put(R.id.Text10cent, R.id.Sum10cent);
+		idMapSum.put(R.id.Text25cent, R.id.Sum25cent);
+		idMapSum.put(R.id.Text50cent, R.id.Sum50cent);
+		idMapSum.put(R.id.Text100cent, R.id.Sum100cent);
+		idMapSum.put(R.id.Text1dol, R.id.Sum1dol);
+		idMapSum.put(R.id.Text2dol, R.id.Sum2dol);
+		idMapSum.put(R.id.Text5dol, R.id.Sum5dol);
+		idMapSum.put(R.id.Text10dol, R.id.Sum10dol);
+		idMapSum.put(R.id.Text20dol, R.id.Sum20dol);
+		idMapSum.put(R.id.Text50dol, R.id.Sum50dol);
+		idMapSum.put(R.id.Text100dol, R.id.Sum100dol);
+
+		int idx = 0;
+		idMapTxt.put(R.id.Text1cent, centValue[idx++]);
+		idMapTxt.put(R.id.Text5cent, centValue[idx++]);
+		idMapTxt.put(R.id.Text10cent, centValue[idx++]);
+		idMapTxt.put(R.id.Text25cent, centValue[idx++]);
+		idMapTxt.put(R.id.Text50cent, centValue[idx++]);
+		idMapTxt.put(R.id.Text100cent, centValue[idx++]);
+		idMapTxt.put(R.id.Text1dol, centValue[idx++]);
+		idMapTxt.put(R.id.Text2dol, centValue[idx++]);
+		idMapTxt.put(R.id.Text5dol, centValue[idx++]);
+		idMapTxt.put(R.id.Text10dol, centValue[idx++]);
+		idMapTxt.put(R.id.Text20dol, centValue[idx++]);
+		idMapTxt.put(R.id.Text50dol, centValue[idx++]);
+		idMapTxt.put(R.id.Text100dol, centValue[idx]);
+
 		addSetting();
 		add2Init();
 		add2Setting();
@@ -155,7 +186,7 @@ public class MainActivity extends ActionBarActivity implements OnClickListener {
 	// 全画面広告の方。1回表示するたびにロードしなおす必要があるみたい。
 	private void add2Setting() {
 		if (!interstitial.isLoaded()) {
-			Log.d("fukuchi", "未ロードのため、リクエストします。");
+			Log.d("yyama", "未ロードのため、リクエストします。");
 			// 広告リクエストを作成する。
 			AdRequest adRequest = new AdRequest.Builder().addTestDevice(
 					"2D6B2CDFA13324C63449E43857621522").build();
@@ -168,16 +199,23 @@ public class MainActivity extends ActionBarActivity implements OnClickListener {
 	private void draw() {
 		int sum = 0;
 		for (int i = 0; i < numIds.length; i++) {
-			// Log.d("fukuchi", ((TextView) findViewById(numIds[i])).getText()
+			// Log.d("yyama", ((TextView) findViewById(numIds[i])).getText()
 			// .toString());
 			((TextView) findViewById(numIds[i])).setText(" "
-					+ String.format("%,d", data.get(kind[i]).num) + " 枚");
-			((TextView) findViewById(sumIds[i])).setText(String.format("%, d",
-					data.get(kind[i]).sum) + " 円");
-			sum += data.get(kind[i]).sum;
+					+ String.format("%,d", data.get(centValue[i])));
+			int num = 0;
+			if (centValue[i] == 99999) {
+				num = 100;
+			} else {
+				num = centValue[i];
+			}
+			((TextView) findViewById(sumIds[i])).setText(String.format(
+					"$ %,.2f", (double) ((double) data.get(centValue[i])
+							* (double) num / 100.0d)));
+			sum += data.get(centValue[i]) * num;
 		}
-		((TextView) findViewById(R.id.allSum)).setText(String.format("%,d 円",
-				sum));
+		((TextView) findViewById(R.id.allSum)).setText(String.format("$ %,.2f",
+				(double) sum / 100.0d));
 	}
 
 	@Override
@@ -197,8 +235,8 @@ public class MainActivity extends ActionBarActivity implements OnClickListener {
 			PrintWriter writer = new PrintWriter(new OutputStreamWriter(out,
 					"UTF-8"));
 			// 追記する
-			for (int i : kind) {
-				writer.append(i + "," + data.get(i).num + "," + data.get(i).sum
+			for (int i = 0; i < centValue.length; i++) {
+				writer.append(centValue[i] + "," + data.get(centValue[i])
 						+ System.lineSeparator());
 			}
 			writer.close();
@@ -219,9 +257,8 @@ public class MainActivity extends ActionBarActivity implements OnClickListener {
 					in, "UTF-8"));
 			while ((lineBuffer = reader.readLine()) != null) {
 				String[] strs = lineBuffer.split(",");
-				int key = Integer.parseInt(strs[0]);
-				data.get(key).num = Integer.parseInt(strs[1]);
-				data.get(key).sum = Integer.parseInt(strs[2]);
+				Integer kind = Integer.parseInt(strs[0]);
+				data.put(kind, Integer.parseInt(strs[1]));
 			}
 		} catch (IOException e) {
 			e.printStackTrace();
@@ -238,8 +275,8 @@ public class MainActivity extends ActionBarActivity implements OnClickListener {
 				.setText(String.valueOf(now));
 		AlertDialog.Builder builder = new Builder(this);
 		builder.setView(dialog);
-		builder.setTitle(((TextView) v).getText() + "の枚数");
-		builder.setNegativeButton("キャンセル",
+		builder.setTitle(((TextView) v).getText() + " ");
+		builder.setNegativeButton(getString(R.string.cancel),
 				new DialogInterface.OnClickListener() {
 					@Override
 					public void onClick(DialogInterface dialog, int which) {
@@ -257,9 +294,8 @@ public class MainActivity extends ActionBarActivity implements OnClickListener {
 				} catch (NumberFormatException e) {
 					return;
 				}
-				int kind = getKind(((TextView) v).getText().toString());
-				data.get(kind).num = num;
-				data.get(kind).sum = num * kind;
+				Log.d("yyama2", String.valueOf(v.getId()));
+				data.put(idMapTxt.get(v.getId()), num);
 				save();
 				draw();
 			}
@@ -286,19 +322,18 @@ public class MainActivity extends ActionBarActivity implements OnClickListener {
 	private void Clear() {
 		// 確認ダイアログの生成
 		AlertDialog.Builder alertDlg = new AlertDialog.Builder(this);
-		alertDlg.setTitle("全クリア確認");
-		alertDlg.setMessage("全てクリアしてもよろしいですか？");
+		alertDlg.setTitle(getString(R.string.all_crear_confirm_title));
+		alertDlg.setMessage(getString(R.string.all_crear_confirm_msg));
 		alertDlg.setPositiveButton("OK", new DialogInterface.OnClickListener() {
 			public void onClick(DialogInterface dialog, int which) {
-				for (int i : kind) {
-					data.get(i).num = 0;
-					data.get(i).sum = 0;
+				for (int i : centValue) {
+					data.put(i, 0);
 				}
 				save();
 				draw();
 			}
 		});
-		alertDlg.setNegativeButton("キャンセル",
+		alertDlg.setNegativeButton(getString(R.string.cancel),
 				new DialogInterface.OnClickListener() {
 					public void onClick(DialogInterface dialog, int which) {
 					}
@@ -306,17 +341,12 @@ public class MainActivity extends ActionBarActivity implements OnClickListener {
 		alertDlg.create().show();
 	}
 
-	private int getKind(String str) {
-		String s = str.replace("円", "").replace(",", "").replace(" ", "");
-		return Integer.parseInt(s);
-	}
-
 	private int getNow(int id) {
 		String str = ((TextView) findViewById(idMapNum.get(id))).getText()
-				.toString().replace(",", "");
-		Log.d("fukuchi", str);
-		int now = Integer.parseInt(str.substring(1, str.indexOf(" ", 2)));
-		Log.d("fukuchi", String.valueOf(now));
+				.toString().replace(",", "").replace(" ", "");
+		Log.d("yyama", str);
+		int now = Integer.parseInt(str);
+		Log.d("yyama", String.valueOf(now));
 		return now;
 	}
 
@@ -355,10 +385,10 @@ public class MainActivity extends ActionBarActivity implements OnClickListener {
 		case R.id.screenshot:
 			Screenshot.saveScreen(this);
 			if (interstitial.isLoaded()) {
-				Log.d("fukuchi", "インターステシャルはロードされています。");
+				Log.d("yyama", "インターステシャルはロードされています。");
 				interstitial.show();
 			} else {
-				Log.d("fukuchi", "インターステシャルはロードされていません。");
+				Log.d("yyama", "インターステシャルはロードされていません。");
 			}
 			add2Setting();
 			break;
@@ -403,9 +433,8 @@ public class MainActivity extends ActionBarActivity implements OnClickListener {
 									.openFileOutput(fileName,
 											Activity.MODE_PRIVATE));
 							// 追記する
-							for (int i : kind) {
-								pw.append(i + "," + data.get(i).num + ","
-										+ data.get(i).sum
+							for (int i : centValue) {
+								pw.append(i + "," + data.get(i)
 										+ System.lineSeparator());
 							}
 							pw.flush();

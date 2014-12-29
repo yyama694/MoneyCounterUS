@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/LinearLayout1"
@@ -22,7 +23,9 @@
             android:paddingRight="@dimen/activity_horizontal_margin"
             android:paddingTop="@dimen/activity_vertical_margin" >
 
-            <TableRow style="@style/RowStyle" >
+            <TableRow
+                android:layout_marginBottom="0dp"
+                android:layout_marginTop="0dp" >
 
                 <TextView
                     android:id="@+id/TextView02"
@@ -53,18 +56,51 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="10"
                     android:gravity="right"
-                    android:text="　" />
+                    android:text="@string/space" />
+            </TableRow>
+
+            <TableRow
+                style="@style/RowStyle"
+                android:layout_marginTop="0dp" >
+
+                <TextView
+                    android:id="@+id/Text100dol"
+                    style="@style/LinkStyle"
+                    android:text="@string/dol100" />
+
+                <TextView
+                    android:id="@+id/Num100dol"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="10"
+                    android:gravity="right"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/Sum100dol"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="10"
+                    android:gravity="right"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="10"
+                    android:gravity="right"
+                    android:text="@string/space" />
             </TableRow>
 
             <TableRow style="@style/RowStyle" >
 
                 <TextView
-                    android:id="@+id/Text10000"
+                    android:id="@+id/Text50dol"
                     style="@style/LinkStyle"
-                    android:text="@string/yen10000" />
+                    android:text="@string/dol50" />
 
                 <TextView
-                    android:id="@+id/Num10000"
+                    android:id="@+id/Num50dol"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="10"
@@ -72,7 +108,7 @@
                     android:textSize="18sp" />
 
                 <TextView
-                    android:id="@+id/Sum10000"
+                    android:id="@+id/Sum50dol"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="10"
@@ -84,18 +120,18 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="10"
                     android:gravity="right"
-                    android:text="　" />
+                    android:text="@string/space" />
             </TableRow>
 
             <TableRow style="@style/RowStyle" >
 
                 <TextView
-                    android:id="@+id/Text5000"
+                    android:id="@+id/Text20dol"
                     style="@style/LinkStyle"
-                    android:text="@string/yen5000" />
+                    android:text="@string/dol20" />
 
                 <TextView
-                    android:id="@+id/Num5000"
+                    android:id="@+id/Num20dol"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="10"
@@ -103,7 +139,7 @@
                     android:textSize="18sp" />
 
                 <TextView
-                    android:id="@+id/Sum5000"
+                    android:id="@+id/Sum20dol"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="10"
@@ -115,18 +151,18 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="10"
                     android:gravity="right"
-                    android:text="　" />
+                    android:text="@string/space" />
             </TableRow>
 
             <TableRow style="@style/RowStyle" >
 
                 <TextView
-                    android:id="@+id/Text2000"
+                    android:id="@+id/Text10dol"
                     style="@style/LinkStyle"
-                    android:text="@string/yen2000" />
+                    android:text="@string/dol10" />
 
                 <TextView
-                    android:id="@+id/Num2000"
+                    android:id="@+id/Num10dol"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="10"
@@ -134,38 +170,7 @@
                     android:textSize="18sp" />
 
                 <TextView
-                    android:id="@+id/Sum2000"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="10"
-                    android:gravity="right"
-                    android:textSize="18sp" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="10"
-                    android:gravity="right"
-                    android:text="　" />
-            </TableRow>
-
-            <TableRow style="@style/RowStyle" >
-
-                <TextView
-                    android:id="@+id/Text1000"
-                    style="@style/LinkStyle"
-                    android:text="@string/yen1000" />
-
-                <TextView
-                    android:id="@+id/Num1000"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="10"
-                    android:gravity="right"
-                    android:textSize="18sp" />
-
-                <TextView
-                    android:id="@+id/Sum1000"
+                    android:id="@+id/Sum10dol"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="10"
@@ -177,19 +182,19 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="10"
                     android:gravity="right"
-                    android:text="　"
+                    android:text="@string/space"
                     android:textSize="18sp" />
             </TableRow>
 
             <TableRow style="@style/RowStyle" >
 
                 <TextView
-                    android:id="@+id/Text500"
+                    android:id="@+id/Text5dol"
                     style="@style/LinkStyle"
-                    android:text="@string/yen500" />
+                    android:text="@string/dol5" />
 
                 <TextView
-                    android:id="@+id/Num500"
+                    android:id="@+id/Num5dol"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="10"
@@ -197,7 +202,7 @@
                     android:textSize="18sp" />
 
                 <TextView
-                    android:id="@+id/Sum500"
+                    android:id="@+id/Sum5dol"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="10"
@@ -209,18 +214,18 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="10"
                     android:gravity="right"
-                    android:text="　" />
+                    android:text="@string/space" />
             </TableRow>
 
             <TableRow style="@style/RowStyle" >
 
                 <TextView
-                    android:id="@+id/Text100"
+                    android:id="@+id/Text2dol"
                     style="@style/LinkStyle"
-                    android:text="@string/yen100" />
+                    android:text="@string/dol2" />
 
                 <TextView
-                    android:id="@+id/Num100"
+                    android:id="@+id/Num2dol"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="10"
@@ -228,7 +233,7 @@
                     android:textSize="18sp" />
 
                 <TextView
-                    android:id="@+id/Sum100"
+                    android:id="@+id/Sum2dol"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="10"
@@ -240,18 +245,18 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="10"
                     android:gravity="right"
-                    android:text="　" />
+                    android:text="@string/space" />
             </TableRow>
 
             <TableRow style="@style/RowStyle" >
 
                 <TextView
-                    android:id="@+id/Text50"
+                    android:id="@+id/Text1dol"
                     style="@style/LinkStyle"
-                    android:text="@string/yen50" />
+                    android:text="@string/dol1" />
 
                 <TextView
-                    android:id="@+id/Num50"
+                    android:id="@+id/Num1dol"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="10"
@@ -259,7 +264,7 @@
                     android:textSize="18sp" />
 
                 <TextView
-                    android:id="@+id/Sum50"
+                    android:id="@+id/Sum1dol"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="10"
@@ -271,18 +276,18 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="10"
                     android:gravity="right"
-                    android:text="　" />
+                    android:text="@string/space" />
             </TableRow>
 
             <TableRow style="@style/RowStyle" >
 
                 <TextView
-                    android:id="@+id/Text10"
-                    style="@style/LinkStyle"
-                    android:text="@string/yen10" />
+                    android:id="@+id/Text100cent"
+                    style="@style/LinkStyleCent"
+                    android:text="@string/cent100" />
 
                 <TextView
-                    android:id="@+id/Num10"
+                    android:id="@+id/Num100cent"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="10"
@@ -290,7 +295,7 @@
                     android:textSize="18sp" />
 
                 <TextView
-                    android:id="@+id/Sum10"
+                    android:id="@+id/Sum100cent"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="10"
@@ -302,18 +307,18 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="10"
                     android:gravity="right"
-                    android:text="　" />
+                    android:text="@string/space" />
             </TableRow>
 
             <TableRow style="@style/RowStyle" >
 
                 <TextView
-                    android:id="@+id/Text5"
-                    style="@style/LinkStyle"
-                    android:text="@string/yen5" />
+                    android:id="@+id/Text50cent"
+                    style="@style/LinkStyleCent"
+                    android:text="@string/cent50" />
 
                 <TextView
-                    android:id="@+id/Num5"
+                    android:id="@+id/Num50cent"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="10"
@@ -321,7 +326,7 @@
                     android:textSize="18sp" />
 
                 <TextView
-                    android:id="@+id/Sum5"
+                    android:id="@+id/Sum50cent"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="10"
@@ -333,18 +338,18 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="10"
                     android:gravity="right"
-                    android:text="　" />
+                    android:text="@string/space" />
             </TableRow>
 
             <TableRow style="@style/RowStyle" >
 
                 <TextView
-                    android:id="@+id/Text1"
-                    style="@style/LinkStyle"
-                    android:text="@string/yen1" />
+                    android:id="@+id/Text25cent"
+                    style="@style/LinkStyleCent"
+                    android:text="@string/cent25" />
 
                 <TextView
-                    android:id="@+id/Num1"
+                    android:id="@+id/Num25cent"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="10"
@@ -352,7 +357,7 @@
                     android:textSize="18sp" />
 
                 <TextView
-                    android:id="@+id/Sum1"
+                    android:id="@+id/Sum25cent"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="10"
@@ -364,7 +369,105 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="10"
                     android:gravity="right"
-                    android:text="　" />
+                    android:text="@string/space" />
+            </TableRow>
+
+            <!-- 10cent -->
+
+            <TableRow style="@style/RowStyle" >
+
+                <TextView
+                    android:id="@+id/Text10cent"
+                    style="@style/LinkStyleCent"
+                    android:text="@string/cent10" />
+
+                <TextView
+                    android:id="@+id/Num10cent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="10"
+                    android:gravity="right"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/Sum10cent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="10"
+                    android:gravity="right"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="10"
+                    android:gravity="right"
+                    android:text="@string/space" />
+            </TableRow>
+            <!-- 5cent -->
+
+            <TableRow style="@style/RowStyle" >
+
+                <TextView
+                    android:id="@+id/Text5cent"
+                    style="@style/LinkStyleCent"
+                    android:text="@string/cent5" />
+
+                <TextView
+                    android:id="@+id/Num5cent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="10"
+                    android:gravity="right"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/Sum5cent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="10"
+                    android:gravity="right"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="10"
+                    android:gravity="right"
+                    android:text="@string/space" />
+            </TableRow>
+
+            <!-- 1cent -->
+
+            <TableRow style="@style/RowStyle" >
+
+                <TextView
+                    android:id="@+id/Text1cent"
+                    style="@style/LinkStyleCent"
+                    android:text="@string/cent1" />
+
+                <TextView
+                    android:id="@+id/Num1cent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="10"
+                    android:gravity="right"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/Sum1cent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="10"
+                    android:gravity="right"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="10"
+                    android:gravity="right"
+                    android:text="@string/space" />
             </TableRow>
 
             <TableRow
@@ -374,7 +477,7 @@
                 android:layout_gravity="right"
                 android:layout_marginLeft="3dp"
                 android:layout_marginRight="3dp"
-                android:layout_marginTop="15dp" >
+                android:layout_marginTop="2dp" >
 
                 <Button
                     android:id="@+id/btnClear"
@@ -393,7 +496,7 @@
                     android:layout_weight="10"
                     android:gravity="right"
                     android:text="@string/total"
-                    android:textSize="25dp" />
+                    android:textSize="25sp" />
 
                 <TextView
                     android:id="@+id/allSum"
@@ -401,7 +504,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
                     android:layout_weight="10"
-                    android:textSize="25dp" />
+                    android:textSize="25sp" />
             </TableRow>
         </TableLayout>
     </ScrollView>
@@ -410,8 +513,8 @@
         android:id="@+id/adSpace"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="4dp"
-        android:layout_marginTop="4dp"
+        android:layout_marginBottom="1dp"
+        android:layout_marginTop="0dp"
         android:orientation="vertical" >
     </LinearLayout>
 

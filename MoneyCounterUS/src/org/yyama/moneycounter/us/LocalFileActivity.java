@@ -148,9 +148,10 @@ public class LocalFileActivity extends Activity implements OnClickListener {
 					});
 			builder.setTitle(getString(R.string.delete_confirmation));
 			TextView tv = new TextView(this);
-			tv.setText(getSelectFileTitle());
-			tv.setTextColor(Color.GRAY);
-			builder.setView(tv);
+			builder.setMessage(getSelectFileTitle());
+//			tv.setText(getSelectFileTitle());
+//			tv.setTextColor(Color.GRAY);
+//			builder.setView(tv);
 			builder.create().show();
 
 			break;

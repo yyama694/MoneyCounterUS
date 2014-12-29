@@ -18,13 +18,24 @@
         <item name="android:clickable">true</item>
         <item name="android:textStyle">italic</item>
     </style>
-
+    <style name="LinkStyleCent">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">10</item>
+        <item name="android:gravity">right</item>
+        <item name="android:textSize">22sp</item>
+        <item name="android:textColor">@drawable/text_color_cent</item>
+        <item name="android:background">@drawable/background_color</item>
+        <item name="android:clickable">true</item>
+        <item name="android:textStyle">italic</item>
+    </style>
+    
     <style name="RowStyle">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_marginLeft">3dp</item>
         <item name="android:layout_marginRight">3dp</item>
-        <item name="android:layout_marginTop">4dp</item>
+        <item name="android:layout_marginTop">2dp</item>
     </style>
 
 </resources>
