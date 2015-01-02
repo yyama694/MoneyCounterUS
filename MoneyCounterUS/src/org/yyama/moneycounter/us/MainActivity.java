@@ -18,9 +18,9 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.ActionBarActivity;
 import android.text.InputType;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -32,7 +32,9 @@ import android.view.inputmethod.EditorInfo;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.TableRow;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -136,9 +138,89 @@ public class MainActivity extends Activity implements OnClickListener {
 		addSetting();
 		add2Init();
 		add2Setting();
-
 		load(FILE_NAME);
 		draw();
+	}
+
+	private boolean isStarted;
+
+	@Override
+	public void onWindowFocusChanged(boolean hasFocus) {
+		super.onWindowFocusChanged(hasFocus);
+		if (!isStarted) {
+			initVew();
+			isStarted = true;
+		}
+	}
+
+	private void initVew() {
+		int hight = (int) ((findViewById(R.id.Text100dol).getHeight()) * 0.8);
+		Log.d("yyama", "高さ" + String.valueOf(hight));
+		ImageView iv;
+
+		iv = (ImageView) findViewById(R.id.img100cent);
+		int orgH = iv.getHeight();
+		Log.d("yyama", "オリジナルの高さ" + orgH);
+		int orgW = iv.getWidth();
+		Log.d("yyama", "オリジナルの幅" + orgW);
+		double raito = (double) hight / (double) orgH;
+		Log.d("yyama", "比率" + raito);
+		TableRow.LayoutParams prm = new TableRow.LayoutParams(
+				(int) (orgW * raito), hight);
+		prm.rightMargin = 0;
+		prm.leftMargin = 0;
+		prm.weight = 0;
+		prm.gravity = Gravity.CENTER;
+		
+
+		// 100ドルイメージを表示
+		iv = (ImageView) findViewById(R.id.img100dol);
+		iv.setLayoutParams(prm);
+		Log.d("yyama", "100ドルの幅：" + iv.getWidth());
+
+		// 50ドルイメージを表示
+		iv = (ImageView) findViewById(R.id.img50dol);
+		iv.setLayoutParams(prm);
+		// 20ドルイメージを表示
+		iv = (ImageView) findViewById(R.id.img20dol);
+		iv.setLayoutParams(prm);
+		// 10ドルイメージを表示
+		iv = (ImageView) findViewById(R.id.img10dol);
+		iv.setLayoutParams(prm);
+		// 5ドルイメージを表示
+		iv = (ImageView) findViewById(R.id.img5dol);
+		iv.setLayoutParams(prm);
+		// 2ドルイメージを表示
+		iv = (ImageView) findViewById(R.id.img2dol);
+		iv.setLayoutParams(prm);
+		// 1ドルイメージを表示
+		iv = (ImageView) findViewById(R.id.img1dol);
+		iv.setLayoutParams(prm);
+		// 100セントイメージを表示
+		iv = (ImageView) findViewById(R.id.img100cent);
+		iv.setLayoutParams(prm);
+		Log.d("yyama", "100セントの幅：" + iv.getWidth());
+		// 50セントイメージを表示
+		iv = (ImageView) findViewById(R.id.img50cent);
+		iv.setLayoutParams(prm);
+		Log.d("yyama", "50セントの幅：" + iv.getWidth());
+		// 25セントイメージを表示
+		iv = (ImageView) findViewById(R.id.img25cent);
+		iv.setLayoutParams(prm);
+		// 10セントイメージを表示
+		iv = (ImageView) findViewById(R.id.img10cent);
+		iv.setLayoutParams(prm);
+		// 5セントイメージを表示
+		iv = (ImageView) findViewById(R.id.img5cent);
+		iv.setLayoutParams(prm);
+		// 1セントイメージを表示
+		iv = (ImageView) findViewById(R.id.img1cent);
+		iv.setLayoutParams(prm);
+
+		// iv.setScaleY(hight);
+		// iv.setMaxHeight(10);
+		// iv.setScaleType(ImageView.ScaleType.CENTER_CROP);
+		// iv.setImageResource(R.drawable.dol100);
 	}
 
 	private AdView adView;

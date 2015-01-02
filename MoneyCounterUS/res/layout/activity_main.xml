@@ -31,7 +31,8 @@
                     android:id="@+id/TextView02"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_weight="10"
+                    android:layout_span="2"
+                    android:layout_weight="0"
                     android:gravity="center_horizontal"
                     android:text="@string/kind" />
 
@@ -39,7 +40,7 @@
                     android:id="@+id/TextView01"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_weight="10"
+                    android:layout_weight="5"
                     android:gravity="center_horizontal"
                     android:text="@string/num" />
 
@@ -50,18 +51,14 @@
                     android:layout_weight="10"
                     android:gravity="center_horizontal"
                     android:text="@string/sub_total" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="10"
-                    android:gravity="right"
-                    android:text="@string/space" />
             </TableRow>
 
-            <TableRow
-                style="@style/RowStyle"
-                android:layout_marginTop="0dp" >
+            <TableRow style="@style/RowStyle" >
+
+                <ImageView
+                    android:id="@+id/img100dol"
+                    style="@style/ImgStyle"
+                    android:src="@drawable/dol100" />
 
                 <TextView
                     android:id="@+id/Text100dol"
@@ -70,11 +67,7 @@
 
                 <TextView
                     android:id="@+id/Num100dol"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="10"
-                    android:gravity="right"
-                    android:textSize="18sp" />
+                    style="@style/NumStyle" />
 
                 <TextView
                     android:id="@+id/Sum100dol"
@@ -83,16 +76,14 @@
                     android:layout_weight="10"
                     android:gravity="right"
                     android:textSize="18sp" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="10"
-                    android:gravity="right"
-                    android:text="@string/space" />
             </TableRow>
 
             <TableRow style="@style/RowStyle" >
+
+                <ImageView
+                    android:id="@+id/img50dol"
+                    style="@style/ImgStyle"
+                    android:src="@drawable/dol50" />
 
                 <TextView
                     android:id="@+id/Text50dol"
@@ -101,11 +92,7 @@
 
                 <TextView
                     android:id="@+id/Num50dol"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="10"
-                    android:gravity="right"
-                    android:textSize="18sp" />
+                    style="@style/NumStyle" />
 
                 <TextView
                     android:id="@+id/Sum50dol"
@@ -114,16 +101,14 @@
                     android:layout_weight="10"
                     android:gravity="right"
                     android:textSize="18sp" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="10"
-                    android:gravity="right"
-                    android:text="@string/space" />
             </TableRow>
 
             <TableRow style="@style/RowStyle" >
+
+                <ImageView
+                    android:id="@+id/img20dol"
+                    style="@style/ImgStyle"
+                    android:src="@drawable/dol20" />
 
                 <TextView
                     android:id="@+id/Text20dol"
@@ -132,11 +117,7 @@
 
                 <TextView
                     android:id="@+id/Num20dol"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="10"
-                    android:gravity="right"
-                    android:textSize="18sp" />
+                    style="@style/NumStyle" />
 
                 <TextView
                     android:id="@+id/Sum20dol"
@@ -145,16 +126,14 @@
                     android:layout_weight="10"
                     android:gravity="right"
                     android:textSize="18sp" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="10"
-                    android:gravity="right"
-                    android:text="@string/space" />
             </TableRow>
 
             <TableRow style="@style/RowStyle" >
+
+                <ImageView
+                    android:id="@+id/img10dol"
+                    style="@style/ImgStyle"
+                    android:src="@drawable/dol10" />
 
                 <TextView
                     android:id="@+id/Text10dol"
@@ -163,11 +142,7 @@
 
                 <TextView
                     android:id="@+id/Num10dol"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="10"
-                    android:gravity="right"
-                    android:textSize="18sp" />
+                    style="@style/NumStyle" />
 
                 <TextView
                     android:id="@+id/Sum10dol"
@@ -176,17 +151,14 @@
                     android:layout_weight="10"
                     android:gravity="right"
                     android:textSize="18sp" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="10"
-                    android:gravity="right"
-                    android:text="@string/space"
-                    android:textSize="18sp" />
             </TableRow>
 
             <TableRow style="@style/RowStyle" >
+
+                <ImageView
+                    android:id="@+id/img5dol"
+                    style="@style/ImgStyle"
+                    android:src="@drawable/dol5" />
 
                 <TextView
                     android:id="@+id/Text5dol"
@@ -195,11 +167,7 @@
 
                 <TextView
                     android:id="@+id/Num5dol"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="10"
-                    android:gravity="right"
-                    android:textSize="18sp" />
+                    style="@style/NumStyle" />
 
                 <TextView
                     android:id="@+id/Sum5dol"
@@ -208,16 +176,14 @@
                     android:layout_weight="10"
                     android:gravity="right"
                     android:textSize="18sp" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="10"
-                    android:gravity="right"
-                    android:text="@string/space" />
             </TableRow>
 
             <TableRow style="@style/RowStyle" >
+
+                <ImageView
+                    android:id="@+id/img2dol"
+                    style="@style/ImgStyle"
+                    android:src="@drawable/dol2" />
 
                 <TextView
                     android:id="@+id/Text2dol"
@@ -226,11 +192,7 @@
 
                 <TextView
                     android:id="@+id/Num2dol"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="10"
-                    android:gravity="right"
-                    android:textSize="18sp" />
+                    style="@style/NumStyle" />
 
                 <TextView
                     android:id="@+id/Sum2dol"
@@ -239,16 +201,14 @@
                     android:layout_weight="10"
                     android:gravity="right"
                     android:textSize="18sp" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="10"
-                    android:gravity="right"
-                    android:text="@string/space" />
             </TableRow>
 
             <TableRow style="@style/RowStyle" >
+
+                <ImageView
+                    android:id="@+id/img1dol"
+                    style="@style/ImgStyle"
+                    android:src="@drawable/dol1" />
 
                 <TextView
                     android:id="@+id/Text1dol"
@@ -257,11 +217,7 @@
 
                 <TextView
                     android:id="@+id/Num1dol"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="10"
-                    android:gravity="right"
-                    android:textSize="18sp" />
+                    style="@style/NumStyle" />
 
                 <TextView
                     android:id="@+id/Sum1dol"
@@ -270,16 +226,14 @@
                     android:layout_weight="10"
                     android:gravity="right"
                     android:textSize="18sp" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="10"
-                    android:gravity="right"
-                    android:text="@string/space" />
             </TableRow>
 
             <TableRow style="@style/RowStyle" >
+
+                <ImageView
+                    android:id="@+id/img100cent"
+                    style="@style/ImgStyle"
+                    android:src="@drawable/cent100" />
 
                 <TextView
                     android:id="@+id/Text100cent"
@@ -288,11 +242,7 @@
 
                 <TextView
                     android:id="@+id/Num100cent"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="10"
-                    android:gravity="right"
-                    android:textSize="18sp" />
+                    style="@style/NumStyle" />
 
                 <TextView
                     android:id="@+id/Sum100cent"
@@ -301,16 +251,14 @@
                     android:layout_weight="10"
                     android:gravity="right"
                     android:textSize="18sp" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="10"
-                    android:gravity="right"
-                    android:text="@string/space" />
             </TableRow>
 
             <TableRow style="@style/RowStyle" >
+
+                <ImageView
+                    android:id="@+id/img50cent"
+                    style="@style/ImgStyle"
+                    android:src="@drawable/cent50" />
 
                 <TextView
                     android:id="@+id/Text50cent"
@@ -319,11 +267,7 @@
 
                 <TextView
                     android:id="@+id/Num50cent"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="10"
-                    android:gravity="right"
-                    android:textSize="18sp" />
+                    style="@style/NumStyle" />
 
                 <TextView
                     android:id="@+id/Sum50cent"
@@ -332,16 +276,14 @@
                     android:layout_weight="10"
                     android:gravity="right"
                     android:textSize="18sp" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="10"
-                    android:gravity="right"
-                    android:text="@string/space" />
             </TableRow>
 
             <TableRow style="@style/RowStyle" >
+
+                <ImageView
+                    android:id="@+id/img25cent"
+                    style="@style/ImgStyle"
+                    android:src="@drawable/cent25" />
 
                 <TextView
                     android:id="@+id/Text25cent"
@@ -350,11 +292,7 @@
 
                 <TextView
                     android:id="@+id/Num25cent"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="10"
-                    android:gravity="right"
-                    android:textSize="18sp" />
+                    style="@style/NumStyle" />
 
                 <TextView
                     android:id="@+id/Sum25cent"
@@ -363,18 +301,16 @@
                     android:layout_weight="10"
                     android:gravity="right"
                     android:textSize="18sp" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="10"
-                    android:gravity="right"
-                    android:text="@string/space" />
             </TableRow>
 
             <!-- 10cent -->
 
             <TableRow style="@style/RowStyle" >
+
+                <ImageView
+                    android:id="@+id/img10cent"
+                    style="@style/ImgStyle"
+                    android:src="@drawable/cent10" />
 
                 <TextView
                     android:id="@+id/Text10cent"
@@ -383,11 +319,7 @@
 
                 <TextView
                     android:id="@+id/Num10cent"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="10"
-                    android:gravity="right"
-                    android:textSize="18sp" />
+                    style="@style/NumStyle" />
 
                 <TextView
                     android:id="@+id/Sum10cent"
@@ -396,17 +328,15 @@
                     android:layout_weight="10"
                     android:gravity="right"
                     android:textSize="18sp" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="10"
-                    android:gravity="right"
-                    android:text="@string/space" />
             </TableRow>
             <!-- 5cent -->
 
             <TableRow style="@style/RowStyle" >
+
+                <ImageView
+                    android:id="@+id/img5cent"
+                    style="@style/ImgStyle"
+                    android:src="@drawable/cent5" />
 
                 <TextView
                     android:id="@+id/Text5cent"
@@ -415,11 +345,7 @@
 
                 <TextView
                     android:id="@+id/Num5cent"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="10"
-                    android:gravity="right"
-                    android:textSize="18sp" />
+                    style="@style/NumStyle" />
 
                 <TextView
                     android:id="@+id/Sum5cent"
@@ -428,18 +354,16 @@
                     android:layout_weight="10"
                     android:gravity="right"
                     android:textSize="18sp" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="10"
-                    android:gravity="right"
-                    android:text="@string/space" />
             </TableRow>
 
             <!-- 1cent -->
 
             <TableRow style="@style/RowStyle" >
+
+                <ImageView
+                    android:id="@+id/img1cent"
+                    style="@style/ImgStyle"
+                    android:src="@drawable/cent1" />
 
                 <TextView
                     android:id="@+id/Text1cent"
@@ -448,11 +372,7 @@
 
                 <TextView
                     android:id="@+id/Num1cent"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="10"
-                    android:gravity="right"
-                    android:textSize="18sp" />
+                    style="@style/NumStyle" />
 
                 <TextView
                     android:id="@+id/Sum1cent"
@@ -461,53 +381,56 @@
                     android:layout_weight="10"
                     android:gravity="right"
                     android:textSize="18sp" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="10"
-                    android:gravity="right"
-                    android:text="@string/space" />
-            </TableRow>
-
-            <TableRow
-                android:id="@+id/TableRow18"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="right"
-                android:layout_marginLeft="3dp"
-                android:layout_marginRight="3dp"
-                android:layout_marginTop="2dp" >
-
-                <Button
-                    android:id="@+id/btnClear"
-                    style="?android:attr/buttonStyleSmall"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="right"
-                    android:text="@string/all_clear" />
-
-                <TextView
-                    android:id="@+id/textView2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginRight="15dp"
-                    android:layout_marginTop="10dp"
-                    android:layout_weight="10"
-                    android:gravity="right"
-                    android:text="@string/total"
-                    android:textSize="25sp" />
-
-                <TextView
-                    android:id="@+id/allSum"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
-                    android:layout_weight="10"
-                    android:textSize="25sp" />
             </TableRow>
         </TableLayout>
     </ScrollView>
+
+    <TableLayout
+        android:id="@+id/TableLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin" >
+
+        <TableRow
+            android:id="@+id/TableRow18"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:layout_marginLeft="3dp"
+            android:layout_marginRight="3dp"
+            android:layout_marginTop="2dp" >
+
+            <Button
+                android:id="@+id/btnClear"
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:layout_weight="0"
+                android:text="@string/all_clear" />
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_weight="5"
+                android:gravity="center"
+                android:text="@string/total"
+                android:textSize="25sp" />
+
+            <TextView
+                android:id="@+id/allSum"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_weight="10"
+                android:gravity="right"
+                android:textSize="25sp" />
+        </TableRow>
+    </TableLayout>
 
     <LinearLayout
         android:id="@+id/adSpace"
