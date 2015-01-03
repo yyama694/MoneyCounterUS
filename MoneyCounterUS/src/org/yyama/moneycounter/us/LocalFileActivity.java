@@ -6,7 +6,6 @@ import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.graphics.Color;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -38,7 +37,7 @@ public class LocalFileActivity extends Activity implements OnClickListener {
 	private void initAdview() {
 		// adView ÇçÏê¨Ç∑ÇÈ
 		mAdView = new AdView(this);
-		mAdView.setAdUnitId("ca-app-pub-2505812570403600/9728259376");
+		mAdView.setAdUnitId("ca-app-pub-2505812570403600/9054250576");
 		mAdView.setAdSize(AdSize.BANNER);
 		mAdView.setPadding(0, 0, 0, 5);
 		// AdRequest adRequest = new
@@ -147,11 +146,7 @@ public class LocalFileActivity extends Activity implements OnClickListener {
 						}
 					});
 			builder.setTitle(getString(R.string.delete_confirmation));
-			TextView tv = new TextView(this);
 			builder.setMessage(getSelectFileTitle());
-//			tv.setText(getSelectFileTitle());
-//			tv.setTextColor(Color.GRAY);
-//			builder.setView(tv);
 			builder.create().show();
 
 			break;

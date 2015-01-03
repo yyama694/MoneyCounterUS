@@ -10,6 +10,7 @@ import java.io.PrintWriter;
 import java.util.Calendar;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Random;
 
 import android.app.Activity;
 import android.app.AlertDialog;
@@ -17,6 +18,9 @@ import android.app.AlertDialog.Builder;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.ColorFilter;
+import android.graphics.LightingColorFilter;
 import android.os.Bundle;
 import android.text.InputType;
 import android.util.Log;
@@ -25,8 +29,10 @@ import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.view.View.OnTouchListener;
 import android.view.Window;
 import android.view.inputmethod.EditorInfo;
 import android.view.inputmethod.InputMethodManager;
@@ -47,8 +53,8 @@ import com.google.android.gms.ads.InterstitialAd;
 /*
  * 
  */
-public class MainActivity extends Activity implements OnClickListener {
-
+public class MainActivity extends Activity implements OnClickListener,
+		OnTouchListener {
 	int[] centValue = { 1, 5, 10, 25, 50, 99999, 100, 200, 500, 1000, 2000,
 			5000, 10000 };
 	Map<Integer, Integer> data = new HashMap<Integer, Integer>();
@@ -91,6 +97,20 @@ public class MainActivity extends Activity implements OnClickListener {
 		((TextView) findViewById(R.id.Text10cent)).setOnClickListener(this);
 		((TextView) findViewById(R.id.Text5cent)).setOnClickListener(this);
 		((TextView) findViewById(R.id.Text1cent)).setOnClickListener(this);
+
+		findViewById(R.id.img100dol).setOnTouchListener(this);
+		findViewById(R.id.img50dol).setOnTouchListener(this);
+		findViewById(R.id.img20dol).setOnTouchListener(this);
+		findViewById(R.id.img10dol).setOnTouchListener(this);
+		findViewById(R.id.img5dol).setOnTouchListener(this);
+		findViewById(R.id.img2dol).setOnTouchListener(this);
+		findViewById(R.id.img1dol).setOnTouchListener(this);
+		findViewById(R.id.img100cent).setOnTouchListener(this);
+		findViewById(R.id.img50cent).setOnTouchListener(this);
+		findViewById(R.id.img25cent).setOnTouchListener(this);
+		findViewById(R.id.img10cent).setOnTouchListener(this);
+		findViewById(R.id.img5cent).setOnTouchListener(this);
+		findViewById(R.id.img1cent).setOnTouchListener(this);
 
 		idMapNum.put(R.id.Text1cent, R.id.Num1cent);
 		idMapNum.put(R.id.Text5cent, R.id.Num5cent);
@@ -171,7 +191,6 @@ public class MainActivity extends Activity implements OnClickListener {
 		prm.leftMargin = 0;
 		prm.weight = 0;
 		prm.gravity = Gravity.CENTER;
-		
 
 		// 100ドルイメージを表示
 		iv = (ImageView) findViewById(R.id.img100dol);
@@ -228,7 +247,7 @@ public class MainActivity extends Activity implements OnClickListener {
 	private void addSetting() {
 		// adView を作成する
 		adView = new AdView(this);
-		adView.setAdUnitId("ca-app-pub-2505812570403600/7142907370");
+		adView.setAdUnitId("ca-app-pub-2505812570403600/7577517376");
 		adView.setAdSize(AdSize.BANNER);
 
 		// 属性 android:id="@+id/mainLayout" が与えられているものとして
@@ -254,7 +273,7 @@ public class MainActivity extends Activity implements OnClickListener {
 	private void add2Init() {
 		// インタースティシャルを作成する。
 		interstitial = new InterstitialAd(this);
-		interstitial.setAdUnitId("ca-app-pub-2505812570403600/9562186572");
+		interstitial.setAdUnitId("ca-app-pub-2505812570403600/1530983777");
 
 		// Set the AdListener.
 		interstitial.setAdListener(new AdListener() {
@@ -523,6 +542,17 @@ public class MainActivity extends Activity implements OnClickListener {
 							Toast.makeText(MainActivity.this,
 									R.string.has_been_saved, Toast.LENGTH_LONG)
 									.show();
+							if (interstitial.isLoaded()) {
+								Log.d("yyama", "インターステシャルはロードされています。");
+								Random rnd = new Random();
+								if (rnd.nextInt(4) == 0) {
+									interstitial.show();
+								}
+							} else {
+								Log.d("yyama", "インターステシャルはロードされていません。");
+							}
+							add2Setting();
+
 						} catch (Exception e) {
 							Toast.makeText(MainActivity.this,
 									R.string.failed_to_save, Toast.LENGTH_LONG)
@@ -588,5 +618,82 @@ public class MainActivity extends Activity implements OnClickListener {
 				break;
 			}
 		}
+	}
+
+	@Override
+	public boolean onTouch(View v, MotionEvent arg1) {
+		switch (arg1.getAction()) {
+		case MotionEvent.ACTION_DOWN: {
+			ColorFilter cf = new LightingColorFilter(Color.rgb(157, 204, 224),
+					getResources().getColor(R.color.blue));
+			((ImageView) v).setColorFilter(cf);
+			v.setBackgroundColor(getResources().getColor(R.color.skyblue));
+			break;
+		}
+		case MotionEvent.ACTION_UP: {
+			switch (v.getId()) {
+			case R.id.img100dol: {
+				findViewById(R.id.Text100dol).performClick();
+				break;
+			}
+			case R.id.img50dol: {
+				findViewById(R.id.Text50dol).performClick();
+				break;
+			}
+			case R.id.img20dol: {
+				findViewById(R.id.Text20dol).performClick();
+				break;
+			}
+			case R.id.img10dol: {
+				findViewById(R.id.Text10dol).performClick();
+				break;
+			}
+			case R.id.img5dol: {
+				findViewById(R.id.Text5dol).performClick();
+				break;
+			}
+			case R.id.img2dol: {
+				findViewById(R.id.Text2dol).performClick();
+				break;
+			}
+			case R.id.img1dol: {
+				findViewById(R.id.Text1dol).performClick();
+				break;
+			}
+			case R.id.img100cent: {
+				findViewById(R.id.Text100cent).performClick();
+				break;
+			}
+			case R.id.img50cent: {
+				findViewById(R.id.Text50cent).performClick();
+				break;
+			}
+			case R.id.img25cent: {
+				findViewById(R.id.Text25cent).performClick();
+				break;
+			}
+			case R.id.img10cent: {
+				findViewById(R.id.Text10cent).performClick();
+				break;
+			}
+			case R.id.img5cent: {
+				findViewById(R.id.Text5cent).performClick();
+				break;
+			}
+			case R.id.img1cent: {
+				findViewById(R.id.Text1cent).performClick();
+				break;
+			}
+
+			}
+		}
+		case MotionEvent.ACTION_CANCEL:
+		case MotionEvent.ACTION_OUTSIDE: {
+			((ImageView) v).setColorFilter(null);
+			v.setBackgroundColor(Color.TRANSPARENT);
+			break;
+		}
+		}
+		return true;
 	}
 }

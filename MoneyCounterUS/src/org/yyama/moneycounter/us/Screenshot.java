@@ -4,6 +4,7 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.Calendar;
+import java.util.Locale;
 
 import android.app.Activity;
 import android.graphics.Bitmap;
@@ -73,8 +74,8 @@ public class Screenshot {
 		crView.setVisibility(View.VISIBLE);
 		Toast.makeText(
 				act,
-				"スクリーンショットを保存しました。" + System.lineSeparator() + "保存先「"
-						+ Screenshot.getFolder() + "」", Toast.LENGTH_LONG)
+				act.getString(R.string.saved_screenshot) + System.lineSeparator() + act.getString(R.string.destination) + "["
+						+ Screenshot.getFolder() + "]", Toast.LENGTH_LONG)
 				.show();
 	}
 
@@ -127,7 +128,8 @@ public class Screenshot {
 		cvsBase.drawBitmap(ribbon, 0, 0, null);
 
 		String text1 = "Shooting date and time";
-		String text2 = String.format("    %1$tb. %1$td,%1$tY %1$tH:%1$tM:%1$tS",
+		String text2 = String.format(Locale.ENGLISH,
+				"    %1$tb. %1$td,%1$tY %1$tH:%1$tM:%1$tS",
 				Calendar.getInstance());
 		Paint textPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
 		textPaint.setTextSize(55);

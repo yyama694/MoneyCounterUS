@@ -52,4 +52,6 @@
     <string name="space"></string>
 	<string name="all_crear_confirm_title">Initialize confirmation</string>
 	<string name="all_crear_confirm_msg">Are you sure you want to initialize?</string>
+	<string name="saved_screenshot">saved the screen shot.</string>
+	<string name="destination">Destination</string>
 </resources>
