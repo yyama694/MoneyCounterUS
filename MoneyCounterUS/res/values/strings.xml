@@ -33,7 +33,7 @@
     <string name="open">Open</string>
     <string name="select_file">Please select the file.</string>
     <string name="saveFile">File save</string>
-    <string name="selectFile">File selection</string>
+    <string name="selectFile">File list</string>
     <string name="has_been_saved">Has been saved.</string>
     <string name="failed_to_save">Failed to save.</string>
     <string name="delete">Delete</string>
@@ -47,11 +47,11 @@
     <string name="kind">Kind</string>
     <string name="num">Num</string>
     <string name="sub_total">Subtotal</string>
-    <string name="all_clear">Initialize</string>
+    <string name="all_clear">Clear</string>
     <string name="total">Total</string>
     <string name="space"></string>
 	<string name="all_crear_confirm_title">Initialize confirmation</string>
-	<string name="all_crear_confirm_msg">Are you sure you want to initialize?</string>
+	<string name="all_crear_confirm_msg">Are you sure you want to clear all?</string>
 	<string name="saved_screenshot">saved the screen shot.</string>
 	<string name="destination">Destination</string>
 </resources>
