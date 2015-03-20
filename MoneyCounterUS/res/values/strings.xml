@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">Money Counter US</string>
+    <string name="app_name">Money Counter USA</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
     <string name="yen10000"><u>10,000 円 </u></string>

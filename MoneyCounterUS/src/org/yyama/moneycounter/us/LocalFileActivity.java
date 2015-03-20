@@ -1,12 +1,18 @@
 package org.yyama.moneycounter.us;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Arrays;
+import java.util.Date;
+import java.util.Locale;
 
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.format.DateFormat;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -45,7 +51,7 @@ public class LocalFileActivity extends Activity implements OnClickListener {
 		LinearLayout ll = (LinearLayout) findViewById(R.id.linear_layout3);
 		ll.addView(mAdView);
 		AdRequest adRequest = new AdRequest.Builder().addTestDevice(
-				"2D6B2CDFA13324C63449E43857621522").build();
+				"F3B1B2779DEF816F9B31AA6C6DC57C3F").build();
 		mAdView.loadAd(adRequest);
 	}
 
@@ -55,13 +61,28 @@ public class LocalFileActivity extends Activity implements OnClickListener {
 		final LinearLayout ll = (LinearLayout) findViewById(R.id.select_file_list);
 		String fileTitle = null; // ファイル表示用文字列
 		for (int i = filesStr.length - 1; i >= 0; i--) {
+			Log.d("yyama", "ファイル名：「" + filesStr[i] + "」");
+		}
+		for (int i = filesStr.length - 1; i >= 0; i--) {
 			String s = filesStr[i];
-			if (s.equals(MainActivity.FILE_NAME)) {
+			if (s.equals(MainActivity.FILE_NAME) || s.equals("gaClientId")) {
 				continue;
 			}
-			fileTitle = " " + s.substring(3, 7) + "/" + s.substring(7, 9) + "/"
-					+ s.substring(9, 11) + " " + s.substring(12, 14) + ":"
-					+ s.substring(14, 16) + ":" + s.substring(16, 18) + " ";
+			SimpleDateFormat outSd = new SimpleDateFormat("dd-MMM-yyyy",
+					Locale.ENGLISH);
+			SimpleDateFormat inSd = new SimpleDateFormat("yyyy/MM/dd",
+					Locale.ENGLISH);
+			Date date = null;
+			try {
+				date = inSd.parse(s.substring(3, 7) + "/" + s.substring(7, 9)
+						+ "/" + s.substring(9, 11));
+			} catch (ParseException e) {
+				Log.d("yyama", "日付変換エラーです。");
+				e.printStackTrace();
+			}
+			fileTitle = " " + outSd.format(date) + " " + s.substring(12, 14)
+					+ ":" + s.substring(14, 16) + ":" + s.substring(16, 18)
+					+ " ";
 			if (s.length() >= 23) {
 				fileTitle += s.substring(19, s.length() - 4);
 			}

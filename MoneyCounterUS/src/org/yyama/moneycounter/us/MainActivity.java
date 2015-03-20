@@ -259,7 +259,7 @@ public class MainActivity extends Activity implements OnClickListener,
 
 		// 一般的なリクエストを行う
 		AdRequest adRequest = new AdRequest.Builder().addTestDevice(
-				"2D6B2CDFA13324C63449E43857621522").build();
+				"F3B1B2779DEF816F9B31AA6C6DC57C3F").build();
 		// AdRequest adRequest = new AdRequest.Builder().build();
 
 		// 広告リクエストを行って adView を読み込む
@@ -290,7 +290,7 @@ public class MainActivity extends Activity implements OnClickListener,
 			Log.d("yyama", "未ロードのため、リクエストします。");
 			// 広告リクエストを作成する。
 			AdRequest adRequest = new AdRequest.Builder().addTestDevice(
-					"2D6B2CDFA13324C63449E43857621522").build();
+					"F3B1B2779DEF816F9B31AA6C6DC57C3F").build();
 			// インタースティシャルの読み込みを開始する。
 			interstitial.loadAd(adRequest);
 		} else {
