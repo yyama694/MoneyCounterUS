@@ -22,6 +22,7 @@ import android.graphics.Color;
 import android.graphics.ColorFilter;
 import android.graphics.LightingColorFilter;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.text.InputType;
 import android.util.Log;
 import android.view.Gravity;
@@ -33,7 +34,6 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.View.OnTouchListener;
-import android.view.Window;
 import android.view.inputmethod.EditorInfo;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
@@ -53,7 +53,7 @@ import com.google.android.gms.ads.InterstitialAd;
 /*
  * 
  */
-public class MainActivity extends Activity implements OnClickListener,
+public class MainActivity extends AppCompatActivity implements OnClickListener,
 		OnTouchListener {
 	int[] centValue = { 1, 5, 10, 25, 50, 99999, 100, 200, 500, 1000, 2000,
 			5000, 10000 };
@@ -75,7 +75,6 @@ public class MainActivity extends Activity implements OnClickListener,
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		requestWindowFeature(Window.FEATURE_NO_TITLE);
 		setContentView(R.layout.activity_main);
 		for (int i : centValue) {
 			data.put(i, 0);
@@ -338,7 +337,7 @@ public class MainActivity extends Activity implements OnClickListener,
 			// ’Ç‹L‚·‚é
 			for (int i = 0; i < centValue.length; i++) {
 				writer.append(centValue[i] + "," + data.get(centValue[i])
-						+ System.lineSeparator());
+						+ System.getProperty("line.separator"));
 			}
 			writer.close();
 		} catch (IOException e) {
@@ -536,7 +535,7 @@ public class MainActivity extends Activity implements OnClickListener,
 							// ’Ç‹L‚·‚é
 							for (int i : centValue) {
 								pw.append(i + "," + data.get(i)
-										+ System.lineSeparator());
+										+ System.getProperty("line.separator"));
 							}
 							pw.flush();
 							Toast.makeText(MainActivity.this,
@@ -602,7 +601,7 @@ public class MainActivity extends Activity implements OnClickListener,
 					Toast.makeText(
 							this,
 							getString(R.string.opend_file)
-									+ System.lineSeparator()
+									+ System.getProperty("line.separator")
 									+ data.getStringExtra("file_title"),
 							Toast.LENGTH_LONG).show();
 				} catch (Exception e) {
